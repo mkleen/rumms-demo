@@ -8,7 +8,7 @@ final class WebController(context: ControllerContext) extends Controller with Lo
 	/** used for client-side version checking */
 	val version = 1
 	/** available as rumms.userData in the client */
-	val userData:JSValue = JSSerialization serialize None
+	val userData:JSValue = JSNull
 	
 	var clients = Set[ConversationId]() 
 	
@@ -45,12 +45,12 @@ final class WebController(context: ControllerContext) extends Controller with Lo
 	def dispose():Unit = DEBUG("Shutdown application")
 
 	/** the browser uploads some data. returns false if the upload was rejected */
-	def handleUpload(conversationId:ConversationId, message:JSValue, upload:Upload):Boolean = true 
+	def handleUpload(conversationId:ConversationId, message:JSValue, upload:Upload):Boolean = false 
 	
 	/** the browser wants to download some data. returns None if the download was rejected. */
 	def handleDownload(conversationId:ConversationId, message:JSValue):Option[Download] = None
 	
 	/** called after a single upload request is finished, possibly after multiple calls to handleUpload */
-	def uploadBatchCompleted(conversationId:ConversationId):Unit = true
+	def uploadBatchCompleted(conversationId:ConversationId):Unit = false
 
 }

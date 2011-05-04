@@ -19,15 +19,17 @@ $(function() {
 	}
 
 	function handleDisconnect(conversationId) {
-		console.debug("Session lost");
+		chatUI.addLine("Session lost"); 
 		conversationId_	= null;
 	}
 
 	function handleUpgrade(version) {
+		chatUI.addLine("Recieve error"); 
 		console.debug("Server upgrade", version);
 	}
 	
 	function handleError(error) {
+		chatUI.addLine("Recieve error"); 
 		console.debug("Recieve error", error);
 	}
 	
@@ -56,4 +58,4 @@ $(function() {
 	})
 	
 	$('body').after(chatUI.element)		
-}); 
+});
