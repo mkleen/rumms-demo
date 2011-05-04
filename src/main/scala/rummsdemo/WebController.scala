@@ -3,7 +3,6 @@ package rummsdemo
 import scutil.log.Logging
 import scjson._
 import rumms._
-import message._
 
 final class WebController(context: ControllerContext) extends Controller with Logging {
 	/** used for client-side version checking */
