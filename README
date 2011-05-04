@@ -1,0 +1,24 @@
+This is a simple demo of an evented-io chatserver using the rumms framework. 
+
+To build and run the demo, you first need to solve need to build the depend libraries. Make sure sbt and scala is installed on your system, then run the following commands in the given order: 
+
+git clone https://github.com/ritschwumm/scutil.git
+cd scutil
+sbt update publish-local 
+
+git clone https://github.com/ritschwumm/scjson.git
+cd scjson 
+sbt update publish-local
+
+git clone https://github.com/ritschwumm/rumms.git
+cd rumms
+sbt update publish-local 
+
+Then use the following commands to setup and run the demo: 
+
+git clone git@github.com:mkleen/rumms-demo.git
+cd rumms-demo 
+sbt update 
+sbt jetty
+
+Then open http://localhost:8080/index.html in a browser.

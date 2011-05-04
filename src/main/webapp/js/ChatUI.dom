@@ -1,0 +1,4 @@
+<div xid="ChatUI_DOM">
+	<input xid="input" class="field" type="text" name="text" placeholder="Type here"/>
+	<ul xid="output"></ul>	
+</div>

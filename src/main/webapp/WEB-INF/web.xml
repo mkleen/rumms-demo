@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app id="rummsdemo" 
+		version="2.5" 
+		xmlns="http://java.sun.com/xml/ns/j2ee" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<display-name>rumms-demo</display-name>
+	<description>rumms-demo</description>	
+	
+	<servlet>
+		<servlet-name>FrontServlet</servlet-name>
+		<servlet-class>rumms.FrontServlet</servlet-class>
+		<load-on-startup>100</load-on-startup>
+		<init-param>
+			<param-name>controller</param-name>
+			<param-value>rummsdemo.WebController</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FrontServlet</servlet-name>
+		<url-pattern>/rumms/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DomServlet</servlet-name>
+		<servlet-class>rumms.DomServlet</servlet-class>
+		<load-on-startup>90</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DomServlet</servlet-name>
+		<url-pattern>*.dom</url-pattern>
+	</servlet-mapping>
+</web-app>
